@@ -5,7 +5,7 @@ langchain-mcp-adapters>=0.3.0
 langchain-tavily>=0.2.18
 langgraph>=1.2.9
 langsmith>=0.10.9
-mcp[cli]>=1.28.1
 python-dotenv>=1.2.2
 requests>=2.34.2
-
+fastmcp==2.11.0
+mcp
