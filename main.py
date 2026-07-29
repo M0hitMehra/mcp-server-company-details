@@ -1,7 +1,7 @@
-from mcp.server.fastmcp import FastMCP
+# from mcp.server import FastMCP
+from fastmcp import FastMCP
 import requests
 import os
-
 
 mcp = FastMCP("company-details")
 
@@ -40,7 +40,7 @@ def get_company_details(cin_or_llp: str) -> dict:
 
 
 @mcp.tool()
-def get_company_cin_or_llp_number(compnayName: str) -> dict:
+def get_company_cin_or_llp_number(companyName: str) -> dict:
     """
     description: Fetch company/LLP Number details using company name.
 
@@ -51,7 +51,7 @@ def get_company_cin_or_llp_number(compnayName: str) -> dict:
     """
 
     response = requests.get(
-        f"{CIN_FETCH_URL}?query={compnayName}",
+        f"{CIN_FETCH_URL}?query={companyName}",
         timeout=30,
         verify=False,
     )
@@ -63,3 +63,4 @@ def get_company_cin_or_llp_number(compnayName: str) -> dict:
 
 if __name__ == "__main__":
     mcp.run(transport="streamable-http")
+ 
