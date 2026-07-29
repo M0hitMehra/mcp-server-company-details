@@ -7,5 +7,5 @@ langgraph>=1.2.9
 langsmith>=0.10.9
 python-dotenv>=1.2.2
 requests>=2.34.2
-fastmcp==2.11.0
-mcp>=1.28,<2
+fastmcp==3.4.5
+ 
