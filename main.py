@@ -1,6 +1,9 @@
 # from mcp.server import FastMCP
 from fastmcp import FastMCP
 import requests
+from starlette.middleware import Middleware
+from starlette.middleware.cors import CORSMiddleware
+import uvicorn
 import os
 
 mcp = FastMCP("company-details")
@@ -61,6 +64,21 @@ def get_company_cin_or_llp_number(companyName: str) -> dict:
     return response.json()
 
 
+middleware = [
+    Middleware(
+        CORSMiddleware,
+        allow_origins=["*"],  # Development only
+        allow_methods=["*"],
+        allow_headers=["*"],
+        expose_headers=["mcp-session-id"],
+    )
+]
+
+app = mcp.http_app(middleware=middleware)
+
 if __name__ == "__main__":
-    mcp.run(transport="streamable-http")
- 
+    uvicorn.run(
+        app,
+        host="0.0.0.0",
+        port=int(os.getenv("PORT", 8000)),
+    )
