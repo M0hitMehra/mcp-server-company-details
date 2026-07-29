@@ -13,7 +13,7 @@ dependencies = [
     "langchain-tavily>=0.2.18",
     "langgraph>=1.2.9",
     "langsmith>=0.10.9",
-    "mcp>=1.28.1",
+    "mcp>=1.28,<2",
     "python-dotenv>=1.2.2",
     "requests>=2.34.2",
 ]
