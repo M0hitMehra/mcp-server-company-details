@@ -1,5 +1,7 @@
 from mcp.server.fastmcp import FastMCP
 import requests
+import os
+
 
 mcp = FastMCP("company-details")
 
