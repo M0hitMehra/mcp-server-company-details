@@ -101,7 +101,7 @@ def get_director_detail_via_din(din_number: str) -> dict:
      
 
     response = requests.get(
-        f"{CIN_FETCH_URL}?din={din_number}",
+        f"{DIRECTOR_DATA_URL}?din={din_number}",
          headers={
             "Authorization": get_auth_header()
         },
