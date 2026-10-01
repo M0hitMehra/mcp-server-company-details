@@ -105,6 +105,15 @@ def get_auth_header() -> str:
 
 @mcp.tool()
 def get_director_detail_via_din(din_number: str) -> dict:
+    
+    """
+        description: Fetch director details using din number.
+    
+        args: unique din number
+    
+        response : response will be a complete details of a director fetched by din number in json format 
+    
+    """
 
     logger.info(
         "get_director_detail_via_din called. DIN=%s",
